@@ -1,4 +1,4 @@
-import React, { useEffect, startTransition, Suspense } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -7,7 +7,6 @@ const Selasa = React.lazy(() => import("../components/Mapel/Selasa"));
 const Rabu = React.lazy(() => import("../components/Mapel/Rabu"));
 const Kamis = React.lazy(() => import("../components/Mapel/Kamis"));
 const Jumat = React.lazy(() => import("../components/Mapel/Jumat"));
-const Sabtu = React.lazy(() => import("../components/Mapel/Sabtu"));
 
 const Schedule = () => {
   const daysOfWeek = [
@@ -32,19 +31,19 @@ const Schedule = () => {
   // Menentukan kelompok piket berdasarkan minggu saat ini
   if (currentWeek === 1 || currentWeek === 3) {
     piketGroup = [
-      ["Nicolas", "Togi", "Paulista", "Damar"],
+   /*    ["Nicolas", "Togi", "Paulista", "Damar"],
       ["Farel", "Jeriko", "Wahyu", "Davina"],
       ["Alya", "Hendri", "Hisyam", "Dafy"],
       ["Putri", "Natar", "Wahid", "Fadliansyah"],
-      ["Cariska", "Pratiwi", "Ridho", "Farji"],
+      ["Cariska", "Pratiwi", "Ridho", "Farji"], */
     ];
   } else if (currentWeek === 2 || currentWeek === 4) {
     piketGroup = [
-      ["Annissa", "Daus", "Eki", "Attala"],
+/*       ["Annissa", "Daus", "Eki", "Attala"],
       ["Sera", "Sultan", "Dimas", "Lista"],
       ["Windi", "Amel", "Arif", "Fadli"],
       ["Zaini", "Dendi", "Raka", "Bari"],
-      ["Putri", "Paulista", "Nila"],
+      ["Putri", "Paulista", "Nila"], */
     ];
   }
 
@@ -55,7 +54,6 @@ const Schedule = () => {
     Rabu,
     Kamis,
     Jumat,
-    Sabtu,
   ];
 
   // Menampilkan komponen berdasarkan hari saat ini
@@ -77,9 +75,13 @@ const Schedule = () => {
             {currentDay}
           </div>
           <div data-aos="fade-up" data-aos-duration="400">
-            <Suspense fallback={<p>Loading...</p>}>
-              <TodayComponent />
-            </Suspense>
+            {TodayComponent ? (
+              <React.Suspense fallback={<p>Loading...</p>}>
+                <TodayComponent />
+              </React.Suspense>
+            ) : (
+              <p className="opacity-50">Tidak Ada Jadwal Hari Ini</p>
+            )}
           </div>
         </div>
       </div>
@@ -91,7 +93,7 @@ const Schedule = () => {
           data-aos="fade-up"
           data-aos-duration="500"
         >
-          Piket
+          Picket
         </div>
         {currentPiketNames && currentPiketNames.length > 0 ? (
           currentPiketNames.map((piketName, index) => (
@@ -102,13 +104,12 @@ const Schedule = () => {
               }`}
               data-aos="fade-up"
               data-aos-duration={600 + index * 100}
-			  
             >
               <div className="text-base font-medium">{piketName}</div>
             </div>
           ))
         ) : (
-          <p className="opacity-50">Tidak ada Jadwal Piket Hari Ini</p>
+          <p className="opacity-50">Maaf Sistem Jadwal Sedang ada perbaikan</p>
         )}
       </div>
     </>

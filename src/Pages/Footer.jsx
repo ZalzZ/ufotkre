@@ -20,13 +20,13 @@ const Footer = () => {
 							<h2 class="mb-4 text-sm font-semibold uppercase text-white">CREATED BY</h2>
 							<ul class="text-gray-400 dark:text-gray-400 font-medium">
 								<li class="mb-2">
-									<a href="https://instagram.com/zalzdev?igshid=OGQ5ZDc2ODk2ZA==" class="hover:underline">
-										ZalzDev
+									<a href="https://www.instagram.com/ekizr_/?hl=id" class="hover:underline">
+										EKIZR
 									</a>
 								</li>
 								<li>
-									<a href="https://instagram.com/syhrl04_?igshid=OGQ5ZDc2ODk2ZA==" class="hover:underline">
-										Syahril
+									<a href="https://www.instagram.com/dafyall/?hl=id" class="hover:underline">
+										DAFYALL
 									</a>
 								</li>
 							</ul>
@@ -35,7 +35,7 @@ const Footer = () => {
 							<h2 class="mb-4 text-sm font-semibold uppercase text-white">Follow us</h2>
 							<ul class="text-gray-400 dark:text-gray-400 font-medium">
 								<li class="mb-2">
-									<a href="https://instagram.com/ufotkre?igshid=OGQ5ZDc2ODk2ZA==" class="hover:underline ">
+									<a href="https://www.instagram.com/acetkjthree/?hl=id" class="hover:underline ">
 										Instagram
 									</a>
 								</li>
@@ -60,7 +60,7 @@ const Footer = () => {
 				<div class="sm:flex sm:items-center sm:justify-between">
 					<div class="flex mt-4 justify-center sm:mt-0">
 						<p className="text-[0.7rem] text-white opacity-70">
-							© {new Date().getFullYear()} Kelas X TKJ 3 | Di Kelola Oleh Siswa TKJ 3
+							© {new Date().getFullYear()} Kelas XI TKJ 3 | Di Kelola Oleh Siswa TKJ 3
 						</p>
 					</div>
 				</div>
